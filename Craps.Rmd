@@ -19,8 +19,11 @@ one_dice_roll <- function(){sample(x=1:6, size=1)}
 
 roll_2 <- function(){one_dice_roll()+one_dice_roll()}
 
-Multi_Roll <- map_int(1:100, ~ roll_2())
+six_roll <- map_int(1:6, ~ roll_2())
 
  Test <- tibble(score=map_int(1:100000, ~ roll_2()))
  
  ggplot(Test, aes(score))+geom_bar()+scale_x_continuous(breaks = seq(2:13))
+```
+
+``` {r, echo=FALSE}
